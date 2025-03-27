@@ -1,0 +1,182 @@
+/* Reset básico e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Container principal */
+.app-container {
+  width: 100%;
+  max-width: 840px;
+}
+
+/* Estilos do Age Calculator */
+.age-calculator {
+  padding: 56px 24px;
+  background-color: white;
+  border-radius: 24px 24px 200px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.age-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-fields {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #716f6f;
+  text-transform: uppercase;
+}
+
+.input-group input {
+  padding: 12px 16px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #854dff;
+  caret-color: #854dff;
+}
+
+.input-group input.error-input {
+  border-color: #ff5757;
+}
+
+.error-message {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  color: #ff5757;
+  font-weight: 400;
+}
+
+.submit-section {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin: 0;
+}
+
+.submit-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #854dff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button:hover {
+  background-color: #141414;
+}
+
+.results {
+  font-size: 56px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.result-number {
+  color: #854dff;
+}
+
+.result-text {
+  color: #141414;
+}
+
+/* Animation */
+.animate-number[data-animate="true"] {
+  animation: countUp 1s ease-out;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .age-calculator {
+    padding: 56px;
+    border-radius: 24px 24px 200px 24px;
+  }
+  
+  .input-fields {
+    gap: 32px;
+    max-width: 80%;
+  }
+  
+  .submit-section {
+    margin-bottom: 48px;
+  }
+  
+  .submit-button {
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+  }
+  
+  .results {
+    font-size: 104px;
+  }
+}
